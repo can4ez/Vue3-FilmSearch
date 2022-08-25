@@ -22,6 +22,9 @@
                 <router-link :to="{ name: 'home'}" class="navbar-item">
                     Главная
                 </router-link>
+                <router-link :to="{ name: 'top'}" class="navbar-item">
+                    ТОП-250
+                </router-link>
                 <router-link :to="{ name: 'favorites'}" class="navbar-item">
                     Избранное
                 </router-link>

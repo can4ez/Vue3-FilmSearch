@@ -17,7 +17,7 @@
                     </div>
                 </div>
 
-                <div class="content description">
+                <div class="content description" v-if="film.description !== undefined">
                     {{ film.description }}
                 </div>
             </div>
