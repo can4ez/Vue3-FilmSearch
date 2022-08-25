@@ -15,6 +15,7 @@ export default createStore({
             localStorage.removeItem('favorites')
           }
         }
+        localStorage.setItem('favorites', JSON.stringify(state.favorites))
       }
       return state.favorites
     }
