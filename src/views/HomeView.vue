@@ -7,11 +7,11 @@
             <section
                 class="hero is-fullheight"
                 :style="{ 'background-image': `url(${film['posterUrl']})` }">
-                <div class="hero-body">
+                <a class="hero-body" @click="handleClickBanner">
                     <p class="title">
                     {{film['nameRu']}}
                     </p>
-                </div>
+                </a>
             </section>
         </div>
         <!-- Текстовый блок с информацией о сайте -->
@@ -68,6 +68,9 @@ export default {
           console.log('Client Error:', err)
         }
       }
+    },
+    handleClickBanner () {
+      this.$router.push({ name: 'movie', query: { id: this.film.filmId } })
     }
   },
   mounted () {

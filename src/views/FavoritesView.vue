@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     films: function () {
-      return this.$store.state.favorites
+      return this.$store.getters.getFavorites
     }
   },
   methods: { },

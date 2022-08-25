@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     isFavorite: function () {
-      return this.$store.state.favorites.findIndex(item => item.filmId === this.filmData.filmId) !== -1
+      return this.$store.getters.getFavorites.findIndex(item => item.filmId === this.filmData.filmId) !== -1
     },
     addFavorite: function () {
       this.$store.commit('ADD_FAVORITE', this.filmData)
