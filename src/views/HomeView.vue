@@ -90,9 +90,9 @@ export default {
 }
 #homeView .hero .hero-body .title{
     color: #fff;
-    font-size: 8rem;
+    font-size: 400%;
 }
 .text-block{
-    font-size: 2rem;
+    font-size: 200%;
 }
 </style>

@@ -1,8 +1,7 @@
 <template>
   <div class="wrapper">
         <NavBar/>
-    <router-view class="hero is-fullheight"/>
-        <NavBar/>
+        <router-view class="hero is-fullheight"/>
   </div>
 </template>
 
