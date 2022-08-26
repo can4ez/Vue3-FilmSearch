@@ -4,7 +4,8 @@
       <section class="columns is-multiline " v-if="filmData !== null">
         <div class="column is-4">
           <figure class="image is-4by6">
-            <img :src="filmData.posterUrlPreview" alt="">
+            <img :src="filmData.posterUrlPreview" alt="" class="poster-shadow">
+            <img :src="filmData.posterUrlPreview" alt="" class="poster-img">
           </figure>
         </div>
         <div class="column is-8 is-justify-content-left">
@@ -18,7 +19,7 @@
             </div>
           </div>
           <div class="table-container">
-              <h3 class="">О фильме</h3>
+            <h3 class="">О фильме</h3>
             <table class="table">
               <tbody>
                 <tr v-if="filmData.year">
@@ -69,7 +70,7 @@
           </div>
           <div class="description">
             <h3>Обзор</h3>
-            {{filmData.description}}
+            {{ filmData.description }}
           </div>
         </div>
       </section>
@@ -86,9 +87,10 @@
 <script>
 import FavoriteBtn from '@/components/FavoriteBtn.vue'
 import axios from 'axios'
+/* eslint-disable */
 export default {
   name: 'MovieView',
-  data () {
+  data() {
     return { filmData: null, loading: Boolean(false) }
   },
   components: {
@@ -150,19 +152,47 @@ export default {
       }
     }
   },
-  mounted () {
+  mounted() {
     this.loadFilmData(this.$route.query.id)
   },
-  beforeRouteUpdate (to, from, next) {
+  beforeRouteUpdate(to, from, next) {
     this.loadFilmData(to.query.id)
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.table td{padding-left: 0;}
-h3,h2{
+.table td {
+  padding-left: 0;
+}
+
+h3,
+h2 {
   font-size: 120%;
   font-weight: bold;
+}
+
+figure.image.is-4by6 {
+  position: relative;
+}
+
+figure.image.is-4by6 img {
+  border-radius: 9px;
+}
+
+.poster img {
+  width: auto;
+  max-height: 100%;
+  border-radius: 9px;
+}
+
+img.poster-img {
+  position: relative;
+}
+
+img.poster-shadow {
+  position: absolute;
+  transform: scale(1.02);
+  filter: blur(10px);
 }
 </style>
